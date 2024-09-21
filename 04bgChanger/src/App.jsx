@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="w-full h-screen duration-200"
-    style={{backgroundColor: color}}
+    style={{backgroundColor: color}} // first {} is to write JavaScript in JSX, then second {} is for using JavaScript Object.
     >
       <div className="fixed flex flex-wrap justify-center 
       bottom-12 inset-x-0 px-2

@@ -1,6 +1,10 @@
+
 import { useState, useCallback, useEffect, useRef } from 'react'
 
 function App() {
+  // useState hook -> is used to add state to functional components. It allows you to create and 
+  //                  manage state variables in a component and update the UI based on changes to the state.
+
   const [length, setLength] = useState(8)
   const [numberAllowed, setNumberAllowed] = useState(false)
   const [charAllowed, setCharAllowed] = useState(false)
@@ -8,6 +12,8 @@ function App() {
 
   // useRef hook
   const passwordRef = useRef(null)
+
+  // useCallback -> is used to memoize a function, preventing it from being Re-created on every Render unless its Dependencies change.
 
   const passwordGenerator = useCallback( () => {
     let pass = ""
@@ -26,6 +32,8 @@ function App() {
 
   }, [length, numberAllowed, charAllowed])
 
+  // useEffect -> is used to handle side effects in functional components. Side effects can include things like:
+  //              Fetching data from an API, Subscribing to events, Manipulating the DOM, Setting up timers.
   useEffect( () => {
     passwordGenerator()
   }, [length, numberAllowed, charAllowed, passwordGenerator])
